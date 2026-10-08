@@ -1,0 +1,1182 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TotoLab | Consultoría y desarrollo de software en Nicaragua</title>
+  <meta name="description" content="TotoLab es una consultora de desarrollo de software fundada en 2025 en Managua, Nicaragua. Creamos apps móviles, sistemas web y soluciones a la medida para negocios.">
+  <meta name="theme-color" content="#071624">
+  <link rel="canonical" href="https://totolab-ni.github.io/">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/logo-totolab.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TotoLab">
+  <meta property="og:locale" content="es_NI">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:url" content="https://totolab-ni.github.io/">
+  <meta property="og:title" content="TotoLab · Consulting & Development">
+  <meta property="og:description" content="Software a la medida, hecho en Nicaragua. Apps móviles, sistemas web y consultoría tecnológica.">
+  <meta property="og:image" content="https://totolab-ni.github.io/assets/logo-totolab.png">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TotoLab",
+    "url": "https://totolab-ni.github.io/",
+    "logo": "https://totolab-ni.github.io/assets/logo-totolab.png",
+    "foundingDate": "2025",
+    "email": "totolab2025@gmail.com",
+    "telephone": "+505 8730 1111",
+    "address": { "@type": "PostalAddress", "addressLocality": "Managua", "addressCountry": "NI" },
+    "sameAs": [
+      "https://www.linkedin.com/company/totolab-company/",
+      "https://www.facebook.com/profile.php?id=61581822892052",
+      "https://www.tiktok.com/@totolab26"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      /* Marca (tomada del logo) */
+      --navy: #071624;
+      --navy-2: #0C2135;
+      --navy-3: #13304B;
+      --cream: #F3EBDD;
+      --macaw-red: #D7262E;
+      --macaw-yellow: #F5B82E;
+      --macaw-blue: #1E5BB8;
+      --circuit: #6FD0E6;
+
+      /* Superficies de contenido (modo claro) */
+      --bg: #F7F5F0;
+      --surface: #FFFFFF;
+      --surface-2: #EFECE4;
+      --fg: #0B1B2B;
+      --muted-fg: #4A5868;
+      --border: rgba(7, 22, 36, 0.10);
+      --border-strong: rgba(7, 22, 36, 0.18);
+      --link: #1E5BB8;
+      --cta: #C8232B;
+      --cta-hover: #A81C23;
+      --on-cta: #FFFFFF;
+      --input-bg: #FBFAF7;
+      --error: #B42318;
+      --success: #15803D;
+      --shadow: 0 1px 2px rgba(7, 22, 36, 0.04), 0 8px 24px -12px rgba(7, 22, 36, 0.12);
+
+      --font: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      --radius: 14px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #071624;
+        --surface: #0C2135;
+        --surface-2: #10283F;
+        --fg: #EEF2F6;
+        --muted-fg: #A3B3C4;
+        --border: rgba(243, 235, 221, 0.10);
+        --border-strong: rgba(243, 235, 221, 0.20);
+        --link: #8DB6F5;
+        --cta: #D7262E;
+        --cta-hover: #E8414A;
+        --input-bg: #081B2C;
+        --error: #F97066;
+        --success: #4ADE80;
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: var(--font); font-size: 1rem; line-height: 1.6;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: var(--link); text-underline-offset: 3px; }
+    h1, h2, h3 { line-height: 1.15; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+    p { margin: 0; text-wrap: pretty; }
+    :focus-visible { outline: 2px solid var(--macaw-yellow); outline-offset: 3px; border-radius: 6px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+    .skip {
+      position: absolute; left: 16px; top: -60px; z-index: 100;
+      background: var(--macaw-yellow); color: var(--navy); padding: 10px 16px;
+      border-radius: 10px; font-weight: 700; text-decoration: none;
+    }
+    .skip:focus { top: 12px; }
+    .wrap { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 16px; }
+    @media (min-width: 768px) { .wrap { padding: 0 32px; } }
+    .ico { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ---------- Etiqueta tipo comentario de código (firma) ---------- */
+    .eyebrow {
+      font-family: var(--mono); font-size: 0.8125rem; font-weight: 500;
+      color: var(--macaw-blue); letter-spacing: 0.02em; margin-bottom: 14px;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .eyebrow::before { content: "//"; color: var(--macaw-red); }
+    @media (prefers-color-scheme: dark) { .eyebrow { color: var(--circuit); } }
+
+    /* ---------- Franja tricolor de la guacamaya (firma) ---------- */
+    .tricolor { display: flex; height: 4px; width: 56px; border-radius: 4px; overflow: hidden; }
+    .tricolor span { flex: 1; }
+    .tricolor span:nth-child(1) { background: var(--macaw-red); }
+    .tricolor span:nth-child(2) { background: var(--macaw-yellow); }
+    .tricolor span:nth-child(3) { background: var(--macaw-blue); }
+
+    /* ---------- Botones ---------- */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 48px; padding: 0 22px; border-radius: 12px; border: 1px solid transparent;
+      font: inherit; font-weight: 700; font-size: 0.975rem; text-decoration: none; cursor: pointer;
+      transition: background-color 180ms var(--ease), border-color 180ms var(--ease), transform 120ms var(--ease), box-shadow 180ms var(--ease);
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-cta { background: var(--cta); color: var(--on-cta); box-shadow: 0 6px 20px -8px rgba(215, 38, 46, 0.6); }
+    .btn-cta:hover { background: var(--cta-hover); }
+    .btn-ghost-dark { background: rgba(243, 235, 221, 0.06); color: var(--cream); border-color: rgba(243, 235, 221, 0.22); }
+    .btn-ghost-dark:hover { background: rgba(243, 235, 221, 0.12); border-color: rgba(243, 235, 221, 0.4); }
+    .btn-outline { background: transparent; color: var(--fg); border-color: var(--border-strong); }
+    .btn-outline:hover { background: var(--surface-2); }
+    .btn .ico { width: 18px; height: 18px; transition: transform 180ms var(--ease); }
+    .btn:hover .ico-arrow { transform: translateX(3px); }
+
+    /* ---------- Header ---------- */
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(7, 22, 36, 0.86); backdrop-filter: saturate(140%) blur(14px); -webkit-backdrop-filter: saturate(140%) blur(14px);
+      border-bottom: 1px solid rgba(243, 235, 221, 0.08); color: var(--cream);
+    }
+    .header-bar { display: flex; align-items: center; gap: 16px; height: 68px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--cream); text-decoration: none; font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; min-height: 44px; }
+    .brand img { width: 38px; height: 38px; border-radius: 10px; }
+    .nav { margin-left: auto; display: none; }
+    .nav ul { list-style: none; display: flex; gap: 4px; margin: 0; padding: 0; }
+    .nav a {
+      display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 10px;
+      color: rgba(243, 235, 221, 0.78); text-decoration: none; font-weight: 600; font-size: 0.925rem;
+      transition: color 150ms, background-color 150ms;
+    }
+    .nav a:hover { color: var(--cream); background: rgba(243, 235, 221, 0.07); }
+    .header-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+    .lang-toggle {
+      display: inline-flex; padding: 3px; border-radius: 11px; background: rgba(243, 235, 221, 0.07);
+      border: 1px solid rgba(243, 235, 221, 0.14);
+    }
+    .lang-toggle button {
+      min-width: 44px; min-height: 36px; border: 0; border-radius: 8px; background: transparent; cursor: pointer;
+      color: rgba(243, 235, 221, 0.7); font: inherit; font-family: var(--mono); font-size: 0.8rem; font-weight: 500;
+      transition: background-color 150ms, color 150ms;
+    }
+    .lang-toggle button[aria-pressed="true"] { background: var(--cream); color: var(--navy); }
+    .header-cta { display: none; min-height: 42px; padding: 0 16px; font-size: 0.9rem; }
+    .menu-btn {
+      width: 44px; height: 44px; display: inline-grid; place-items: center; border-radius: 10px; cursor: pointer;
+      background: transparent; color: var(--cream); border: 1px solid rgba(243, 235, 221, 0.18);
+    }
+    .mobile-nav { display: none; border-top: 1px solid rgba(243, 235, 221, 0.08); padding: 8px 0 16px; }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a {
+      display: flex; align-items: center; min-height: 48px; padding: 0 16px; color: var(--cream);
+      text-decoration: none; font-weight: 600; border-radius: 10px;
+    }
+    .mobile-nav a:hover { background: rgba(243, 235, 221, 0.07); }
+    @media (min-width: 960px) {
+      .nav { display: block; }
+      .header-actions { margin-left: 8px; }
+      .header-cta { display: inline-flex; }
+      .menu-btn, .mobile-nav, .mobile-nav.open { display: none; }
+    }
+
+    /* ---------- Hero ---------- */
+    .hero { position: relative; background: var(--navy); color: var(--cream); overflow: hidden; isolation: isolate; }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background:
+        radial-gradient(60% 70% at 85% 30%, rgba(30, 91, 184, 0.28), transparent 70%),
+        radial-gradient(40% 50% at 10% 100%, rgba(215, 38, 46, 0.14), transparent 70%);
+    }
+    .circuit-bg { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; opacity: 0.5; }
+    .circuit-bg path { stroke: var(--circuit); stroke-width: 1.2; fill: none; opacity: 0.35; }
+    @media (max-width: 767px) { .circuit-bg { opacity: 0.22; } }
+    .circuit-bg circle { fill: var(--navy); stroke: var(--circuit); stroke-width: 1.2; opacity: 0.6; }
+    .hero .wrap { display: grid; gap: 48px; padding-top: 64px; padding-bottom: 72px; align-items: center; }
+    @media (min-width: 960px) { .hero .wrap { grid-template-columns: 1.15fr 0.85fr; padding-top: 96px; padding-bottom: 112px; } }
+    .hero .eyebrow { color: var(--circuit); }
+    .hero h1 { font-size: clamp(2.3rem, 6vw, 4rem); font-weight: 800; letter-spacing: -0.035em; }
+    .hero h1 em { font-style: normal; color: var(--macaw-yellow); }
+    .hero-lead { margin-top: 20px; font-size: clamp(1.05rem, 2vw, 1.2rem); color: rgba(243, 235, 221, 0.8); max-width: 56ch; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 36px; font-size: 0.9rem; color: rgba(243, 235, 221, 0.66); }
+    .hero-meta span { display: inline-flex; align-items: center; gap: 8px; }
+    .hero-meta .ico { width: 16px; height: 16px; color: var(--circuit); }
+
+    .hero-visual { position: relative; justify-self: center; width: min(100%, 420px); }
+    .logo-frame {
+      position: relative; aspect-ratio: 1; border-radius: 28px; overflow: hidden;
+      border: 1px solid rgba(243, 235, 221, 0.12);
+      box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.7), 0 0 0 8px rgba(243, 235, 221, 0.03);
+    }
+    .logo-frame img { width: 100%; height: 100%; object-fit: cover; }
+    .float-card {
+      position: absolute; display: flex; align-items: center; gap: 10px;
+      padding: 10px 14px; border-radius: 12px; font-size: 0.82rem; font-weight: 600; color: var(--cream);
+      background: rgba(12, 33, 53, 0.88); border: 1px solid rgba(243, 235, 221, 0.14);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.6);
+    }
+    .float-card .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+    .float-card code { font-family: var(--mono); font-size: 0.75rem; color: var(--circuit); }
+    .fc-1 { left: -12px; top: 14%; text-decoration: none; min-height: 44px; transition: border-color 150ms; }
+    .fc-1:hover { border-color: rgba(111, 208, 230, 0.6); }
+    .fc-2 { right: -10px; bottom: -16px; }
+    @media (max-width: 480px) { .fc-1 { left: 8px; top: 8px; } .fc-2 { right: 8px; } }
+
+    /* ---------- Franja de datos ---------- */
+    .stats { background: var(--navy-2); color: var(--cream); border-top: 1px solid rgba(243, 235, 221, 0.06); }
+    .stats ul { list-style: none; margin: 0; padding: 28px 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px 16px; }
+    @media (min-width: 768px) { .stats ul { grid-template-columns: repeat(4, 1fr); } }
+    .stats li { display: flex; flex-direction: column; gap: 2px; padding-left: 14px; border-left: 2px solid rgba(111, 208, 230, 0.35); }
+    .stats strong { font-size: clamp(1.5rem, 3vw, 1.9rem); font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+    .stats span { font-size: 0.88rem; color: rgba(243, 235, 221, 0.68); }
+
+    /* ---------- Secciones ---------- */
+    section { scroll-margin-top: 72px; }
+    .section { padding: 80px 0; }
+    @media (min-width: 768px) { .section { padding: 112px 0; } }
+    .section-alt { background: var(--surface-2); }
+    .section-head { max-width: 680px; margin-bottom: 48px; }
+    .section-head h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; }
+    .section-head p { margin-top: 14px; color: var(--muted-fg); font-size: 1.075rem; }
+    .section-head .tricolor { margin-top: 20px; }
+
+    .card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    /* Servicios */
+    .grid-3 { display: grid; gap: 16px; }
+    @media (min-width: 640px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .grid-3 { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+    .service { padding: 28px; transition: transform 220ms var(--ease), border-color 220ms var(--ease); }
+    .service:hover { transform: translateY(-3px); border-color: var(--border-strong); }
+    .service-ico {
+      width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 20px;
+      background: var(--navy); color: var(--circuit);
+    }
+    .service-ico .ico { width: 24px; height: 24px; }
+    .service:nth-child(3n+1) .service-ico { box-shadow: inset 0 -3px 0 var(--macaw-red); }
+    .service:nth-child(3n+2) .service-ico { box-shadow: inset 0 -3px 0 var(--macaw-yellow); }
+    .service:nth-child(3n+3) .service-ico { box-shadow: inset 0 -3px 0 var(--macaw-blue); }
+    .service h3 { font-size: 1.15rem; font-weight: 700; }
+    .service p { margin-top: 10px; color: var(--muted-fg); font-size: 0.975rem; }
+
+    /* Proyectos */
+    .projects { display: grid; gap: 16px; }
+    @media (min-width: 768px) { .projects { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
+    @media (min-width: 1100px) { .projects { grid-template-columns: repeat(6, 1fr); } .project { grid-column: span 2; } .project.wide { grid-column: span 3; } }
+    .project { display: flex; flex-direction: column; padding: 28px; position: relative; overflow: hidden; }
+    .project::before { content: ""; position: absolute; left: 0; top: 0; right: 0; height: 3px; background: var(--accent, var(--macaw-blue)); }
+    .project-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+    .project-ico {
+      width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; flex: none;
+      background: color-mix(in srgb, var(--accent, var(--macaw-blue)) 14%, transparent); color: var(--accent, var(--macaw-blue));
+    }
+    .project-ico .ico { width: 26px; height: 26px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px;
+      font-size: 0.75rem; font-weight: 700; white-space: nowrap; border: 1px solid var(--border-strong); color: var(--muted-fg);
+    }
+    .badge .pulse { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+    .badge.live { color: var(--success); border-color: color-mix(in srgb, var(--success) 35%, transparent); }
+    .badge.dev { color: #B45309; border-color: rgba(180, 83, 9, 0.35); }
+    @media (prefers-color-scheme: dark) { .badge.dev { color: var(--macaw-yellow); border-color: rgba(245, 184, 46, 0.35); } }
+    .project h3 { font-size: 1.3rem; font-weight: 800; }
+    .project .kind { margin-top: 4px; font-size: 0.9rem; font-weight: 600; color: var(--muted-fg); }
+    .project p.desc { margin-top: 14px; color: var(--muted-fg); font-size: 0.975rem; flex: 1; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 20px 0 0; padding: 0; list-style: none; }
+    .tags li { font-family: var(--mono); font-size: 0.72rem; padding: 4px 8px; border-radius: 6px; background: var(--surface-2); color: var(--muted-fg); }
+    .project-link {
+      display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; min-height: 44px;
+      font-weight: 700; font-size: 0.925rem; text-decoration: none; color: var(--link); align-self: flex-start;
+    }
+    .project-link:hover { text-decoration: underline; }
+    .project-link .ico { width: 16px; height: 16px; }
+
+    /* Nosotros: misión / visión / metas */
+    .about-intro { display: grid; gap: 40px; align-items: start; }
+    @media (min-width: 960px) { .about-intro { grid-template-columns: 0.9fr 1.1fr; gap: 64px; } }
+    .about-intro .section-head { margin-bottom: 0; }
+    .story p + p { margin-top: 16px; }
+    .story p { color: var(--muted-fg); font-size: 1.05rem; }
+    .story strong { color: var(--fg); }
+    .mvm { display: grid; gap: 16px; margin-top: 56px; }
+    @media (min-width: 900px) { .mvm { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+    .mvm .card { padding: 28px; }
+    .mvm-label { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.15rem; }
+    .mvm-label .ico { width: 22px; height: 22px; color: var(--macaw-red); }
+    .mvm .card:nth-child(2) .mvm-label .ico { color: #C98A06; }
+    .mvm .card:nth-child(3) .mvm-label .ico { color: var(--macaw-blue); }
+    @media (prefers-color-scheme: dark) {
+      .mvm .card:nth-child(2) .mvm-label .ico { color: var(--macaw-yellow); }
+      .mvm .card:nth-child(3) .mvm-label .ico { color: var(--circuit); }
+    }
+    .mvm p { margin-top: 12px; color: var(--muted-fg); }
+    .goals { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 10px; }
+    .goals li { display: flex; gap: 10px; color: var(--muted-fg); font-size: 0.975rem; }
+    .goals .ico { width: 18px; height: 18px; color: var(--success); margin-top: 3px; }
+
+    /* Valores */
+    .values { display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    @media (min-width: 640px) { .values { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .values { grid-template-columns: repeat(3, 1fr); } }
+    .value { background: var(--surface); padding: 32px 28px; }
+    .value-num { font-family: var(--mono); font-size: 0.8rem; color: var(--macaw-red); }
+    .value h3 { margin-top: 10px; font-size: 1.15rem; font-weight: 800; }
+    .value p { margin-top: 10px; color: var(--muted-fg); font-size: 0.975rem; }
+
+    /* Proceso */
+    .process { background: var(--navy); color: var(--cream); position: relative; overflow: hidden; }
+    .process .section-head p { color: rgba(243, 235, 221, 0.72); }
+    .process .eyebrow { color: var(--circuit); }
+    .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; counter-reset: step; }
+    @media (min-width: 768px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1100px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+    .step {
+      position: relative; padding: 28px; border-radius: var(--radius);
+      background: rgba(243, 235, 221, 0.04); border: 1px solid rgba(243, 235, 221, 0.1);
+    }
+    .step::before {
+      counter-increment: step; content: "0" counter(step);
+      font-family: var(--mono); font-size: 0.85rem; color: var(--navy); background: var(--circuit);
+      display: inline-grid; place-items: center; width: 40px; height: 28px; border-radius: 8px; font-weight: 500;
+    }
+    .step h3 { margin-top: 18px; font-size: 1.15rem; font-weight: 800; }
+    .step p { margin-top: 10px; color: rgba(243, 235, 221, 0.72); font-size: 0.95rem; }
+
+    /* Contacto */
+    .contact-grid { display: grid; gap: 24px; }
+    @media (min-width: 960px) { .contact-grid { grid-template-columns: 0.85fr 1.15fr; gap: 40px; align-items: start; } }
+    .contact-list { display: grid; gap: 12px; }
+    .contact-item {
+      display: flex; align-items: center; gap: 16px; padding: 18px 20px; text-decoration: none; color: var(--fg);
+      transition: border-color 180ms var(--ease), transform 180ms var(--ease);
+    }
+    a.contact-item:hover { border-color: var(--border-strong); transform: translateX(3px); }
+    .contact-item .ci-ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; flex: none; background: var(--navy); color: var(--circuit); }
+    .contact-item small { display: block; font-size: 0.8rem; color: var(--muted-fg); font-weight: 600; }
+    .contact-item span.v { font-weight: 700; word-break: break-word; }
+    .socials { display: flex; gap: 10px; margin-top: 8px; flex-wrap: wrap; }
+    .socials a {
+      width: 48px; height: 48px; display: grid; place-items: center; border-radius: 12px;
+      border: 1px solid var(--border-strong); color: var(--fg); background: var(--surface);
+      transition: background-color 150ms, color 150ms, border-color 150ms;
+    }
+    .socials a:hover { background: var(--navy); color: var(--cream); border-color: var(--navy); }
+
+    form.card { padding: 28px; }
+    @media (min-width: 768px) { form.card { padding: 36px; } }
+    .form-title { font-size: 1.3rem; font-weight: 800; }
+    .form-sub { margin-top: 6px; color: var(--muted-fg); font-size: 0.95rem; }
+    .fields { display: grid; gap: 18px; margin-top: 24px; }
+    @media (min-width: 640px) { .fields { grid-template-columns: 1fr 1fr; } .field.full { grid-column: 1 / -1; } }
+    .field label { display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 6px; }
+    .field label .opt { font-weight: 500; color: var(--muted-fg); }
+    .field input, .field select, .field textarea {
+      width: 100%; min-height: 48px; padding: 12px 14px; border-radius: 10px;
+      border: 1px solid var(--border-strong); background: var(--input-bg); color: var(--fg);
+      font: inherit; font-size: 1rem; transition: border-color 150ms, box-shadow 150ms;
+    }
+    .field textarea { min-height: 140px; resize: vertical; }
+    .field select { appearance: none; -webkit-appearance: none; padding-right: 40px; cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%234A5868' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m4 6 4 4 4-4'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 14px center; }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--macaw-blue); box-shadow: 0 0 0 3px rgba(30, 91, 184, 0.2); }
+    .field [aria-invalid="true"] { border-color: var(--error); }
+    .field .err { display: none; margin-top: 6px; font-size: 0.85rem; font-weight: 600; color: var(--error); }
+    .field .err.show { display: block; }
+    .form-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .form-actions .btn { flex: 1 1 200px; }
+    .form-note { margin-top: 16px; font-size: 0.85rem; color: var(--muted-fg); }
+    .form-status { margin-top: 16px; padding: 12px 14px; border-radius: 10px; font-size: 0.925rem; font-weight: 600; display: none; }
+    .form-status.show { display: block; background: color-mix(in srgb, var(--success) 12%, transparent); color: var(--success); }
+
+    /* CTA final */
+    .cta-band { padding: 0 0 80px; }
+    .cta-box {
+      position: relative; overflow: hidden; border-radius: 24px; padding: 40px 28px; color: var(--cream);
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-3) 100%);
+      display: grid; gap: 24px; align-items: center;
+    }
+    @media (min-width: 768px) { .cta-box { padding: 56px; grid-template-columns: 1fr auto; } }
+    .cta-box h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 800; }
+    .cta-box p { margin-top: 10px; color: rgba(243, 235, 221, 0.75); }
+
+    /* Footer */
+    .site-footer { background: var(--navy); color: rgba(243, 235, 221, 0.7); padding: 56px 0 32px; font-size: 0.925rem; }
+    .footer-grid { display: grid; gap: 32px; }
+    @media (min-width: 768px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; } }
+    .site-footer h3 { color: var(--cream); font-size: 0.95rem; font-weight: 700; margin-bottom: 12px; }
+    .site-footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+    .site-footer a { color: rgba(243, 235, 221, 0.78); text-decoration: none; display: inline-flex; min-height: 32px; align-items: center; }
+    .site-footer a:hover { color: var(--cream); text-decoration: underline; }
+    .footer-brand p { margin-top: 12px; max-width: 40ch; }
+    .footer-bottom { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(243, 235, 221, 0.08); display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 0.85rem; }
+
+    /* Animación de entrada al hacer scroll */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 600ms var(--ease), transform 600ms var(--ease); }
+    .reveal.in { opacity: 1; transform: none; }
+    .no-js .reveal { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body class="no-js">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
+      <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></symbol>
+      <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36z"/></symbol>
+      <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></symbol>
+      <symbol id="i-lifebuoy" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+      <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+      <symbol id="i-bike" viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></symbol>
+      <symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></symbol>
+      <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+      <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V2a5 5 0 0 0 5 5"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip" href="#main" data-i18n="skip">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="wrap header-bar">
+      <a class="brand" href="#top" aria-label="TotoLab, inicio">
+        <img src="assets/logo-totolab.png" alt="" width="38" height="38">
+        TotoLab
+      </a>
+      <nav class="nav" aria-label="Principal" data-i18n-attr="aria-label:nav.label">
+        <ul>
+          <li><a href="#servicios" data-i18n="nav.services">Servicios</a></li>
+          <li><a href="#proyectos" data-i18n="nav.projects">Proyectos</a></li>
+          <li><a href="#nosotros" data-i18n="nav.about">Nosotros</a></li>
+          <li><a href="#proceso" data-i18n="nav.process">Cómo trabajamos</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+          <button type="button" data-lang="es" aria-pressed="true" lang="es" aria-label="Español">ES</button>
+          <button type="button" data-lang="en" aria-pressed="false" lang="en" aria-label="English">EN</button>
+        </div>
+        <a class="btn btn-cta header-cta" href="#contacto" data-i18n="nav.contact">Contáctenos</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" data-i18n-attr="aria-label:nav.open" aria-label="Abrir menú">
+          <svg class="ico"><use href="#i-menu"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav wrap" id="mobile-nav" aria-label="Móvil" data-i18n-attr="aria-label:nav.mobile">
+      <a href="#servicios" data-i18n="nav.services">Servicios</a>
+      <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
+      <a href="#nosotros" data-i18n="nav.about">Nosotros</a>
+      <a href="#proceso" data-i18n="nav.process">Cómo trabajamos</a>
+      <a href="#contacto" data-i18n="nav.contact">Contáctenos</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <svg class="circuit-bg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <path d="M0 120 H260 L300 160 H520"/><circle cx="520" cy="160" r="5"/>
+        <path d="M0 420 H180 L230 370 H400 L440 330"/><circle cx="440" cy="330" r="5"/>
+        <path d="M1200 80 H980 L940 120 H820"/><circle cx="820" cy="120" r="5"/>
+        <path d="M1200 500 H1040 L1000 460 H900 L860 500 H760"/><circle cx="760" cy="500" r="5"/>
+        <path d="M640 600 V520 L680 480 V420"/><circle cx="680" cy="420" r="5"/>
+        <path d="M120 0 V60 L160 100"/><circle cx="160" cy="100" r="5"/>
+      </svg>
+      <div class="wrap">
+        <div>
+          <p class="eyebrow" data-i18n="hero.eyebrow">Consultoría y desarrollo · Desde 2025</p>
+          <h1 id="hero-title" data-i18n="hero.title" data-i18n-html>Software a la medida, <em>hecho en Nicaragua.</em></h1>
+          <p class="hero-lead" data-i18n="hero.lead">Diseñamos y construimos apps móviles, sistemas web y herramientas de gestión que resuelven problemas reales de negocios reales: funcionan sin internet, hablan en córdobas y cuidan los datos de sus clientes.</p>
+          <div class="hero-actions">
+            <a class="btn btn-cta" href="#contacto"><span data-i18n="hero.cta">Cuéntenos su proyecto</span><svg class="ico ico-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost-dark" href="#proyectos" data-i18n="hero.cta2">Ver proyectos</a>
+          </div>
+          <div class="hero-meta">
+            <span><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="hero.loc">Managua, Nicaragua</span></span>
+            <span><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg><span data-i18n="hero.remote">Clientes locales y remotos</span></span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="logo-frame">
+            <img src="assets/logo-totolab.png" alt="Logo de TotoLab: una guacamaya con trazos de circuito" data-i18n-attr="alt:hero.logoAlt" width="420" height="420" fetchpriority="high">
+          </div>
+          <a class="float-card fc-1" href="https://play.google.com/store/apps/details?id=com.totolab.myapplottery" target="_blank" rel="noopener"><span class="dot" style="background:#4ADE80"></span><span data-i18n="hero.fc1">AdminPlus en Google Play</span></a>
+          <div class="float-card fc-2" aria-hidden="true"><code>offline-first</code></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DATOS ================= -->
+    <div class="stats">
+      <div class="wrap">
+        <ul>
+          <li><strong>2025</strong><span data-i18n="stats.founded">Año de fundación</span></li>
+          <li><strong>5</strong><span data-i18n="stats.products">Productos construidos</span></li>
+          <li><strong>3</strong><span data-i18n="stats.apps">Apps móviles Android</span></li>
+          <li><strong>ES · EN</strong><span data-i18n="stats.langs">Atención bilingüe</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ================= SERVICIOS ================= -->
+    <section class="section" id="servicios" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="services.eyebrow">Servicios</p>
+          <h2 id="services-title" data-i18n="services.title">Del boceto a producción, con un mismo equipo</h2>
+          <p data-i18n="services.lead">Acompañamos a empresas, emprendedores e instituciones en todo el ciclo de vida de su software.</p>
+          <div class="tricolor" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+        <div class="grid-3">
+          <article class="card service reveal">
+            <div class="service-ico"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg></div>
+            <h3 data-i18n="s1.t">Apps móviles</h3>
+            <p data-i18n="s1.d">Aplicaciones Android con React Native y Expo, listas para Google Play: offline, impresión térmica, escáner y notificaciones.</p>
+          </article>
+          <article class="card service reveal">
+            <div class="service-ico"><svg class="ico" aria-hidden="true"><use href="#i-code"/></svg></div>
+            <h3 data-i18n="s2.t">Sistemas y aplicaciones web</h3>
+            <p data-i18n="s2.d">Plataformas web y PWA con React, NestJS, Go y PostgreSQL. APIs seguras, roles de usuario y tiempo real.</p>
+          </article>
+          <article class="card service reveal">
+            <div class="service-ico"><svg class="ico" aria-hidden="true"><use href="#i-layout"/></svg></div>
+            <h3 data-i18n="s3.t">ERP, POS y gestión</h3>
+            <p data-i18n="s3.d">Punto de venta, inventario, facturación, cartera y reportes adaptados a cómo opera su negocio, no al revés.</p>
+          </article>
+          <article class="card service reveal">
+            <div class="service-ico"><svg class="ico" aria-hidden="true"><use href="#i-compass"/></svg></div>
+            <h3 data-i18n="s4.t">Consultoría tecnológica</h3>
+            <p data-i18n="s4.d">Arquitectura, elección de tecnología, auditorías de seguridad y planes de digitalización con alcance y costos claros.</p>
+          </article>
+          <article class="card service reveal">
+            <div class="service-ico"><svg class="ico" aria-hidden="true"><use href="#i-pen"/></svg></div>
+            <h3 data-i18n="s5.t">Diseño UI/UX</h3>
+            <p data-i18n="s5.d">Interfaces accesibles y fáciles de usar, pensadas para el usuario final: el cajero, el repartidor, el cliente.</p>
+          </article>
+          <article class="card service reveal">
+            <div class="service-ico"><svg class="ico" aria-hidden="true"><use href="#i-lifebuoy"/></svg></div>
+            <h3 data-i18n="s6.t">Soporte y evolución</h3>
+            <p data-i18n="s6.d">Publicación en tiendas, despliegues, monitoreo y mejoras continuas después del lanzamiento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROYECTOS ================= -->
+    <section class="section section-alt" id="proyectos" aria-labelledby="projects-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="projects.eyebrow">Proyectos</p>
+          <h2 id="projects-title" data-i18n="projects.title">Lo que hemos construido</h2>
+          <p data-i18n="projects.lead">Productos propios y sistemas a la medida, diseñados para el día a día de los negocios en Nicaragua.</p>
+          <div class="tricolor" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+
+        <div class="projects">
+          <article class="card project wide reveal" style="--accent:#1E5BB8">
+            <div class="project-top">
+              <div class="project-ico"><svg class="ico" aria-hidden="true"><use href="#i-briefcase"/></svg></div>
+              <span class="badge live"><span class="pulse"></span><span data-i18n="badge.live">En Google Play</span></span>
+            </div>
+            <h3>AdminPlus</h3>
+            <p class="kind" data-i18n="p1.k">CRM para pequeños negocios · Android</p>
+            <p class="desc" data-i18n="p1.d">Clientes, inventario con escáner, ventas y facturación, cobros, finanzas y reportes desde el teléfono. Funciona sin internet y los datos se quedan en el dispositivo.</p>
+            <ul class="tags"><li>React Native</li><li>Expo</li><li>SQLite</li><li data-i18n="tag.printer">Impresión Bluetooth</li></ul>
+            <a class="project-link" href="https://play.google.com/store/apps/details?id=com.totolab.myapplottery" target="_blank" rel="noopener"><span data-i18n="link.play">Ver en Google Play</span><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a>
+          </article>
+
+          <article class="card project wide reveal" style="--accent:#D7262E">
+            <div class="project-top">
+              <div class="project-ico"><svg class="ico" aria-hidden="true"><use href="#i-bike"/></svg></div>
+              <span class="badge dev"><span class="pulse"></span><span data-i18n="badge.dev">En desarrollo</span></span>
+            </div>
+            <h3>MandadoGo</h3>
+            <p class="kind" data-i18n="p2.k">Delivery, retiro en local y mandaditos · Managua</p>
+            <p class="desc" data-i18n="p2.d">Plataforma con apps para clientes, negocios y repartidores: sin comisión por pedido, tarifas que pone el repartidor, seguimiento en mapa y entrega con PIN.</p>
+            <ul class="tags"><li>Go</li><li>React Native</li><li>WebSockets</li><li data-i18n="tag.maps">Mapas</li></ul>
+            <a class="project-link" href="https://mandadogo-prod.web.app" target="_blank" rel="noopener"><span data-i18n="link.site">Visitar sitio</span><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a>
+          </article>
+
+          <article class="card project reveal" style="--accent:#E59A00">
+            <div class="project-top">
+              <div class="project-ico"><svg class="ico" aria-hidden="true"><use href="#i-sun"/></svg></div>
+              <span class="badge" data-i18n="badge.android">App Android</span>
+            </div>
+            <h3>NicaSol</h3>
+            <p class="kind" data-i18n="p3.k">Calculadora de energía solar</p>
+            <p class="desc" data-i18n="p3.d">Dimensiona paneles, inversor y baterías según la factura o los equipos del hogar, con proyección anual y proformas en PDF para instaladores.</p>
+            <ul class="tags"><li>Expo</li><li>NativeWind</li><li>Offline</li></ul>
+            <a class="project-link" href="https://totolab-ni.github.io/privacy-nica-sol/" target="_blank" rel="noopener"><span data-i18n="link.more">Más información</span><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a>
+          </article>
+
+          <article class="card project reveal" style="--accent:#B8860B">
+            <div class="project-top">
+              <div class="project-ico"><svg class="ico" aria-hidden="true"><use href="#i-gem"/></svg></div>
+              <span class="badge" data-i18n="badge.custom">A la medida</span>
+            </div>
+            <h3>Mines Sales</h3>
+            <p class="kind" data-i18n="p4.k">Compraventa de metales preciosos</p>
+            <p class="desc" data-i18n="p4.d">Pesaje de lotes, cálculo de gramos finos, facturación en córdobas o dólares con tasa oficial del BCN y contabilidad por cartera. PWA que sigue funcionando sin internet.</p>
+            <ul class="tags"><li>NestJS</li><li>React PWA</li><li>PostgreSQL</li></ul>
+          </article>
+
+          <article class="card project reveal" style="--accent:#15803D">
+            <div class="project-top">
+              <div class="project-ico"><svg class="ico" aria-hidden="true"><use href="#i-coffee"/></svg></div>
+              <span class="badge" data-i18n="badge.custom">A la medida</span>
+            </div>
+            <h3>TotoLab Sales</h3>
+            <p class="kind" data-i18n="p5.k">ERP / POS para cafeterías y restaurantes</p>
+            <p class="desc" data-i18n="p5.d">Gestión de mesas y pedidos, inventario de insumos, gastos, menú virtual con código QR y reportes de ventas y márgenes en tiempo real.</p>
+            <ul class="tags"><li>NestJS</li><li>React</li><li>Prisma</li><li>Socket.IO</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= NOSOTROS ================= -->
+    <section class="section" id="nosotros" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="about-intro">
+          <div class="section-head reveal">
+            <p class="eyebrow" data-i18n="about.eyebrow">Nosotros</p>
+            <h2 id="about-title" data-i18n="about.title">Una consultora joven con oficio de taller</h2>
+            <div class="tricolor" aria-hidden="true"><span></span><span></span><span></span></div>
+          </div>
+          <div class="story reveal">
+            <p data-i18n="about.p1" data-i18n-html><strong>TotoLab nació en 2025 en Managua</strong> con una idea sencilla: que los negocios nicaragüenses merecen software tan bueno como el de cualquier parte del mundo, pero pensado para su realidad.</p>
+            <p data-i18n="about.p2">Nuestro nombre y nuestra guacamaya vienen de esa mezcla: lo nuestro, lo vivo y lo colorido, unido a la ingeniería. Trabajamos de cerca con cada cliente, entendemos su operación antes de escribir una línea de código y entregamos productos que la gente realmente usa.</p>
+          </div>
+        </div>
+
+        <div class="mvm">
+          <article class="card reveal">
+            <h3 class="mvm-label"><svg class="ico" aria-hidden="true"><use href="#i-target"/></svg><span data-i18n="mission.t">Misión</span></h3>
+            <p data-i18n="mission.d">Crear soluciones de software confiables, accesibles y a la medida que ayuden a negocios e instituciones a trabajar mejor, vender más y tomar decisiones con información clara.</p>
+          </article>
+          <article class="card reveal">
+            <h3 class="mvm-label"><svg class="ico" aria-hidden="true"><use href="#i-eye"/></svg><span data-i18n="vision.t">Visión</span></h3>
+            <p data-i18n="vision.d">Ser la consultora de desarrollo de software de referencia en Nicaragua y Centroamérica, reconocida por la calidad de sus productos y por llevar tecnología de primer nivel a negocios de todos los tamaños.</p>
+          </article>
+          <article class="card reveal">
+            <h3 class="mvm-label"><svg class="ico" aria-hidden="true"><use href="#i-flag"/></svg><span data-i18n="goals.t">Metas</span></h3>
+            <ul class="goals">
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="goals.1">Digitalizar a más pymes nicaragüenses con productos propios.</span></li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="goals.2">Lanzar MandadoGo y crecer nuestro portafolio en Google Play.</span></li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="goals.3">Atender clientes en toda Centroamérica y en el extranjero.</span></li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="goals.4">Formar y emplear talento tecnológico local.</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VALORES ================= -->
+    <section class="section section-alt" id="valores" aria-labelledby="values-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="values.eyebrow">Valores</p>
+          <h2 id="values-title" data-i18n="values.title">Lo que nos guía en cada proyecto</h2>
+          <div class="tricolor" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+        <div class="values reveal">
+          <div class="value"><span class="value-num">01</span><h3 data-i18n="v1.t">Cuentas claras</h3><p data-i18n="v1.d">Alcance, tiempos y costos transparentes desde el primer día. Sin letra pequeña ni sorpresas en la factura.</p></div>
+          <div class="value"><span class="value-num">02</span><h3 data-i18n="v2.t">Privacidad por diseño</h3><p data-i18n="v2.d">Los datos de nuestros clientes son suyos. Guardamos solo lo necesario y lo protegemos como si fuera nuestro.</p></div>
+          <div class="value"><span class="value-num">03</span><h3 data-i18n="v3.t">Hecho para nuestra realidad</h3><p data-i18n="v3.d">Córdobas y dólares, conexiones inestables, impresoras térmicas: diseñamos para cómo se trabaja de verdad aquí.</p></div>
+          <div class="value"><span class="value-num">04</span><h3 data-i18n="v4.t">Calidad de oficio</h3><p data-i18n="v4.d">Código revisado, probado y documentado. Preferimos hacerlo bien una vez que arreglarlo diez veces.</p></div>
+          <div class="value"><span class="value-num">05</span><h3 data-i18n="v5.t">Cercanía</h3><p data-i18n="v5.d">Usted habla directamente con quienes construyen su producto. Escuchamos, explicamos y acompañamos.</p></div>
+          <div class="value"><span class="value-num">06</span><h3 data-i18n="v6.t">Aprendizaje constante</h3><p data-i18n="v6.d">La tecnología cambia rápido; nosotros también. Investigamos y adoptamos lo que de verdad aporta valor.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROCESO ================= -->
+    <section class="section process" id="proceso" aria-labelledby="process-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="process.eyebrow">Cómo trabajamos</p>
+          <h2 id="process-title" data-i18n="process.title">Un proceso simple y predecible</h2>
+          <p data-i18n="process.lead">Entregas cortas y frecuentes para que vea avances reales cada semana.</p>
+        </div>
+        <ol class="steps">
+          <li class="step reveal"><h3 data-i18n="st1.t">Descubrir</h3><p data-i18n="st1.d">Conversamos sobre su negocio, sus usuarios y el problema a resolver. Definimos alcance y prioridades.</p></li>
+          <li class="step reveal"><h3 data-i18n="st2.t">Diseñar</h3><p data-i18n="st2.d">Prototipos y arquitectura técnica validados con usted antes de construir.</p></li>
+          <li class="step reveal"><h3 data-i18n="st3.t">Construir</h3><p data-i18n="st3.d">Desarrollo por fases con demostraciones frecuentes, pruebas y control de calidad.</p></li>
+          <li class="step reveal"><h3 data-i18n="st4.t">Lanzar y acompañar</h3><p data-i18n="st4.d">Publicación, capacitación a su equipo, soporte y mejoras continuas.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= CONTACTO ================= -->
+    <section class="section" id="contacto" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="contact.eyebrow">Contáctenos</p>
+          <h2 id="contact-title" data-i18n="contact.title">Hablemos de su próximo proyecto</h2>
+          <p data-i18n="contact.lead">Cuéntenos su idea o su problema. Respondemos en menos de 24 horas hábiles.</p>
+          <div class="tricolor" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-list reveal">
+            <a class="card contact-item" href="mailto:totolab2025@gmail.com">
+              <span class="ci-ico"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg></span>
+              <span><small data-i18n="contact.email">Correo</small><span class="v">totolab2025@gmail.com</span></span>
+            </a>
+            <a class="card contact-item" href="https://wa.me/50587301111" target="_blank" rel="noopener">
+              <span class="ci-ico"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg></span>
+              <span><small>WhatsApp</small><span class="v">+505 8730 1111</span></span>
+            </a>
+            <div class="card contact-item">
+              <span class="ci-ico"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg></span>
+              <span><small data-i18n="contact.location">Ubicación</small><span class="v" data-i18n="hero.loc">Managua, Nicaragua</span></span>
+            </div>
+            <div class="socials" aria-label="Redes sociales" data-i18n-attr="aria-label:contact.socials">
+              <a href="https://www.linkedin.com/company/totolab-company/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+              <a href="https://www.facebook.com/profile.php?id=61581822892052" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ico" aria-hidden="true"><use href="#i-facebook"/></svg></a>
+              <a href="https://www.tiktok.com/@totolab26" target="_blank" rel="noopener" aria-label="TikTok"><svg class="ico" aria-hidden="true"><use href="#i-tiktok"/></svg></a>
+            </div>
+          </div>
+
+          <form class="card reveal" id="contact-form" novalidate>
+            <h3 class="form-title" data-i18n="form.title">Envíenos un mensaje</h3>
+            <p class="form-sub" data-i18n="form.sub">Los campos marcados son obligatorios.</p>
+            <div class="fields">
+              <div class="field">
+                <label for="f-name"><span data-i18n="form.name">Nombre</span> *</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name">
+                <p class="err" id="e-name" data-i18n="err.name">Escriba su nombre.</p>
+              </div>
+              <div class="field">
+                <label for="f-email"><span data-i18n="form.email">Correo electrónico</span> *</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="e-email">
+                <p class="err" id="e-email" data-i18n="err.email">Escriba un correo válido, por ejemplo nombre@empresa.com.</p>
+              </div>
+              <div class="field">
+                <label for="f-company"><span data-i18n="form.company">Empresa</span> <span class="opt" data-i18n="form.optional">(opcional)</span></label>
+                <input id="f-company" name="company" type="text" autocomplete="organization">
+              </div>
+              <div class="field">
+                <label for="f-type" data-i18n="form.type">Tipo de proyecto</label>
+                <select id="f-type" name="type">
+                  <option value="mobile" data-i18n="opt.mobile">App móvil</option>
+                  <option value="web" data-i18n="opt.web">Sistema o app web</option>
+                  <option value="erp" data-i18n="opt.erp">ERP / POS / gestión</option>
+                  <option value="consulting" data-i18n="opt.consulting">Consultoría</option>
+                  <option value="other" data-i18n="opt.other">Otro</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="f-msg"><span data-i18n="form.msg">Mensaje</span> *</label>
+                <textarea id="f-msg" name="message" required aria-describedby="e-msg" data-i18n-attr="placeholder:form.msgPh" placeholder="¿Qué quiere construir o mejorar?"></textarea>
+                <p class="err" id="e-msg" data-i18n="err.msg">Cuéntenos brevemente su proyecto (al menos 10 caracteres).</p>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn btn-cta" type="submit" data-channel="email"><svg class="ico" aria-hidden="true"><use href="#i-send"/></svg><span data-i18n="form.sendEmail">Enviar por correo</span></button>
+              <button class="btn btn-outline" type="submit" data-channel="whatsapp"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg><span data-i18n="form.sendWa">Enviar por WhatsApp</span></button>
+            </div>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            <p class="form-note" data-i18n="form.note">El mensaje se abre en su aplicación de correo o en WhatsApp para que lo revise antes de enviarlo.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA FINAL ================= -->
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="wrap">
+        <div class="cta-box reveal">
+          <div>
+            <h2 id="cta-title" data-i18n="cta.title">¿Tiene una idea? Construyámosla juntos.</h2>
+            <p data-i18n="cta.lead">La primera conversación no tiene costo y sale con un plan claro.</p>
+          </div>
+          <a class="btn btn-cta" href="https://wa.me/50587301111" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg><span data-i18n="cta.btn">Escríbanos por WhatsApp</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="#top"><img src="assets/logo-totolab.png" alt="" width="38" height="38" loading="lazy">TotoLab</a>
+          <p data-i18n="footer.tag">Consultoría y desarrollo de software. Hecho en Nicaragua desde 2025.</p>
+        </div>
+        <div>
+          <h3 data-i18n="footer.explore">Explorar</h3>
+          <ul>
+            <li><a href="#servicios" data-i18n="nav.services">Servicios</a></li>
+            <li><a href="#proyectos" data-i18n="nav.projects">Proyectos</a></li>
+            <li><a href="#nosotros" data-i18n="nav.about">Nosotros</a></li>
+            <li><a href="#contacto" data-i18n="nav.contact">Contáctenos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="footer.contact">Contacto</h3>
+          <ul>
+            <li><a href="mailto:totolab2025@gmail.com">totolab2025@gmail.com</a></li>
+            <li><a href="https://wa.me/50587301111" target="_blank" rel="noopener">WhatsApp +505 8730 1111</a></li>
+            <li><a href="https://www.linkedin.com/company/totolab-company/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61581822892052" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.tiktok.com/@totolab26" target="_blank" rel="noopener">TikTok</a></li>
+          </ul>
+          <h3 style="margin-top:20px" data-i18n="footer.apps">Nuestras apps</h3>
+          <ul>
+            <li><a href="https://play.google.com/store/apps/details?id=com.totolab.myapplottery" target="_blank" rel="noopener" data-i18n="footer.adminplus">AdminPlus en Google Play</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> TotoLab. <span data-i18n="footer.rights">Todos los derechos reservados.</span></span>
+        <span>Managua, Nicaragua</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      document.body.classList.remove('no-js');
+
+      var EMAIL = 'totolab2025@gmail.com';
+      var WHATSAPP = '50587301111';
+
+      var dict = {
+        es: {
+          'meta.title': 'TotoLab | Consultoría y desarrollo de software en Nicaragua',
+          'meta.desc': 'TotoLab es una consultora de desarrollo de software fundada en 2025 en Managua, Nicaragua. Creamos apps móviles, sistemas web y soluciones a la medida para negocios.'
+        },
+        en: {
+          'meta.title': 'TotoLab | Software consulting & development in Nicaragua',
+          'meta.desc': 'TotoLab is a software development consultancy founded in 2025 in Managua, Nicaragua. We build mobile apps, web systems and custom solutions for businesses.',
+          'skip': 'Skip to content',
+          'nav.label': 'Main',
+          'nav.mobile': 'Mobile',
+          'nav.open': 'Open menu',
+          'nav.close': 'Close menu',
+          'nav.services': 'Services',
+          'nav.projects': 'Projects',
+          'nav.about': 'About us',
+          'nav.process': 'How we work',
+          'nav.contact': 'Contact us',
+          'hero.eyebrow': 'Consulting & development · Since 2025',
+          'hero.title': 'Custom software, <em>made in Nicaragua.</em>',
+          'hero.lead': 'We design and build mobile apps, web systems and management tools that solve real problems for real businesses: they work offline, speak local currency and protect your customers’ data.',
+          'hero.cta': 'Tell us about your project',
+          'hero.cta2': 'See our work',
+          'hero.loc': 'Managua, Nicaragua',
+          'hero.remote': 'Local and remote clients',
+          'hero.logoAlt': 'TotoLab logo: a macaw with circuit traces',
+          'hero.fc1': 'AdminPlus on Google Play',
+          'stats.founded': 'Year founded',
+          'stats.products': 'Products built',
+          'stats.apps': 'Android mobile apps',
+          'stats.langs': 'Bilingual service',
+          'services.eyebrow': 'Services',
+          'services.title': 'From sketch to production, with one team',
+          'services.lead': 'We support companies, entrepreneurs and institutions across the whole lifecycle of their software.',
+          's1.t': 'Mobile apps',
+          's1.d': 'Android apps built with React Native and Expo, ready for Google Play: offline mode, thermal printing, barcode scanning and notifications.',
+          's2.t': 'Web systems & apps',
+          's2.d': 'Web platforms and PWAs with React, NestJS, Go and PostgreSQL. Secure APIs, user roles and real-time updates.',
+          's3.t': 'ERP, POS & management',
+          's3.d': 'Point of sale, inventory, invoicing, accounts and reports shaped around how your business runs — not the other way around.',
+          's4.t': 'Technology consulting',
+          's4.d': 'Architecture, technology selection, security audits and digitalization plans with clear scope and costs.',
+          's5.t': 'UI/UX design',
+          's5.d': 'Accessible, easy-to-use interfaces designed for the people who use them: the cashier, the courier, the customer.',
+          's6.t': 'Support & evolution',
+          's6.d': 'App store publishing, deployments, monitoring and continuous improvements after launch.',
+          'projects.eyebrow': 'Projects',
+          'projects.title': 'What we have built',
+          'projects.lead': 'Our own products and custom systems, designed for the day-to-day of businesses in Nicaragua.',
+          'badge.live': 'On Google Play',
+          'badge.dev': 'In development',
+          'badge.android': 'Android app',
+          'badge.custom': 'Custom build',
+          'p1.k': 'CRM for small businesses · Android',
+          'p1.d': 'Customers, inventory with scanner, sales and invoicing, collections, finances and reports from your phone. Works offline and data stays on the device.',
+          'tag.printer': 'Bluetooth printing',
+          'tag.maps': 'Maps',
+          'link.play': 'View on Google Play',
+          'link.site': 'Visit website',
+          'link.more': 'Learn more',
+          'p2.k': 'Delivery, pickup and errands · Managua',
+          'p2.d': 'A platform with apps for customers, businesses and couriers: no per-order commission, courier-set rates, live map tracking and PIN-verified delivery.',
+          'p3.k': 'Solar energy calculator',
+          'p3.d': 'Sizes panels, inverter and batteries from an electricity bill or household appliances, with a yearly projection and PDF quotes for installers.',
+          'p4.k': 'Precious metals trading',
+          'p4.d': 'Lot weighing, fine-gram calculation, invoicing in córdobas or dollars at the Central Bank’s official rate, and per-portfolio accounting. A PWA that keeps working offline.',
+          'p5.k': 'ERP / POS for cafés and restaurants',
+          'p5.d': 'Table and order management, ingredient inventory, expenses, a QR virtual menu and real-time sales and margin reports.',
+          'about.eyebrow': 'About us',
+          'about.title': 'A young consultancy with a craftsman’s ethic',
+          'about.p1': '<strong>TotoLab was founded in 2025 in Managua</strong> with a simple idea: Nicaraguan businesses deserve software as good as anywhere in the world, but built for their reality.',
+          'about.p2': 'Our name and our macaw come from that blend: what is ours, lively and colorful, joined with engineering. We work closely with each client, understand their operation before writing a line of code, and deliver products people actually use.',
+          'mission.t': 'Mission',
+          'mission.d': 'To create reliable, accessible, tailor-made software that helps businesses and institutions work better, sell more and make decisions with clear information.',
+          'vision.t': 'Vision',
+          'vision.d': 'To be the leading software development consultancy in Nicaragua and Central America, recognized for the quality of its products and for bringing world-class technology to businesses of every size.',
+          'goals.t': 'Goals',
+          'goals.1': 'Help more Nicaraguan SMEs go digital with our own products.',
+          'goals.2': 'Launch MandadoGo and grow our Google Play portfolio.',
+          'goals.3': 'Serve clients across Central America and abroad.',
+          'goals.4': 'Train and employ local tech talent.',
+          'values.eyebrow': 'Values',
+          'values.title': 'What guides us on every project',
+          'v1.t': 'Clear accounts',
+          'v1.d': 'Transparent scope, timelines and costs from day one. No fine print, no surprises on the invoice.',
+          'v2.t': 'Privacy by design',
+          'v2.d': 'Our clients’ data belongs to them. We keep only what is needed and protect it as if it were our own.',
+          'v3.t': 'Built for our reality',
+          'v3.d': 'Two currencies, unstable connections, thermal printers: we design for how work really happens here.',
+          'v4.t': 'Craft quality',
+          'v4.d': 'Reviewed, tested and documented code. We would rather do it right once than fix it ten times.',
+          'v5.t': 'Closeness',
+          'v5.d': 'You talk directly to the people building your product. We listen, explain and stay by your side.',
+          'v6.t': 'Constant learning',
+          'v6.d': 'Technology moves fast, and so do we. We research and adopt what truly adds value.',
+          'process.eyebrow': 'How we work',
+          'process.title': 'A simple, predictable process',
+          'process.lead': 'Short, frequent deliveries so you see real progress every week.',
+          'st1.t': 'Discover',
+          'st1.d': 'We talk about your business, your users and the problem to solve. We define scope and priorities.',
+          'st2.t': 'Design',
+          'st2.d': 'Prototypes and technical architecture validated with you before we build.',
+          'st3.t': 'Build',
+          'st3.d': 'Phased development with frequent demos, testing and quality control.',
+          'st4.t': 'Launch & support',
+          'st4.d': 'Release, training for your team, support and continuous improvement.',
+          'contact.eyebrow': 'Contact us',
+          'contact.title': 'Let’s talk about your next project',
+          'contact.lead': 'Tell us about your idea or your problem. We reply within one business day.',
+          'contact.email': 'Email',
+          'contact.location': 'Location',
+          'contact.socials': 'Social media',
+          'form.title': 'Send us a message',
+          'form.sub': 'Fields marked with * are required.',
+          'form.name': 'Name',
+          'form.email': 'Email',
+          'form.company': 'Company',
+          'form.optional': '(optional)',
+          'form.type': 'Project type',
+          'form.msg': 'Message',
+          'form.msgPh': 'What would you like to build or improve?',
+          'opt.mobile': 'Mobile app',
+          'opt.web': 'Web system or app',
+          'opt.erp': 'ERP / POS / management',
+          'opt.consulting': 'Consulting',
+          'opt.other': 'Other',
+          'err.name': 'Please enter your name.',
+          'err.email': 'Enter a valid email, for example name@company.com.',
+          'err.msg': 'Briefly describe your project (at least 10 characters).',
+          'form.sendEmail': 'Send by email',
+          'form.sendWa': 'Send via WhatsApp',
+          'form.note': 'Your message opens in your email app or WhatsApp so you can review it before sending.',
+          'form.okEmail': 'We opened your email app with the message ready. If it did not open, write to us at totolab2025@gmail.com.',
+          'form.okWa': 'We opened WhatsApp with your message ready. Just tap send.',
+          'mail.subject': 'Project inquiry',
+          'mail.name': 'Name', 'mail.email': 'Email', 'mail.company': 'Company', 'mail.type': 'Project type', 'mail.msg': 'Message',
+          'cta.title': 'Have an idea? Let’s build it together.',
+          'cta.lead': 'The first conversation is free and you leave with a clear plan.',
+          'cta.btn': 'Message us on WhatsApp',
+          'footer.tag': 'Software consulting and development. Made in Nicaragua since 2025.',
+          'footer.explore': 'Explore',
+          'footer.contact': 'Contact',
+          'footer.rights': 'All rights reserved.',
+          'footer.apps': 'Our apps',
+          'footer.adminplus': 'AdminPlus on Google Play'
+        }
+      };
+      // Textos en español que no están en el HTML (solo los usa JS)
+      Object.assign(dict.es, {
+        'nav.open': 'Abrir menú', 'nav.close': 'Cerrar menú',
+        'form.okEmail': 'Abrimos su aplicación de correo con el mensaje listo. Si no se abrió, escríbanos a totolab2025@gmail.com.',
+        'form.okWa': 'Abrimos WhatsApp con su mensaje listo. Solo toque enviar.',
+        'mail.subject': 'Consulta de proyecto',
+        'mail.name': 'Nombre', 'mail.email': 'Correo', 'mail.company': 'Empresa', 'mail.type': 'Tipo de proyecto', 'mail.msg': 'Mensaje'
+      });
+
+      // Guardar el español original del HTML como fuente de verdad
+      var nodes = document.querySelectorAll('[data-i18n]');
+      nodes.forEach(function (el) {
+        var k = el.getAttribute('data-i18n');
+        if (!(k in dict.es)) dict.es[k] = el.hasAttribute('data-i18n-html') ? el.innerHTML : el.textContent;
+      });
+      var attrNodes = document.querySelectorAll('[data-i18n-attr]');
+      attrNodes.forEach(function (el) {
+        var parts = el.getAttribute('data-i18n-attr').split(':');
+        if (!(parts[1] in dict.es)) dict.es[parts[1]] = el.getAttribute(parts[0]);
+      });
+
+      var current = 'es';
+      function t(k) { return (dict[current] && dict[current][k]) || dict.es[k] || ''; }
+
+      function setLang(lang) {
+        current = dict[lang] ? lang : 'es';
+        document.documentElement.lang = current;
+        nodes.forEach(function (el) {
+          var v = t(el.getAttribute('data-i18n'));
+          if (el.hasAttribute('data-i18n-html')) el.innerHTML = v; else el.textContent = v;
+        });
+        attrNodes.forEach(function (el) {
+          var parts = el.getAttribute('data-i18n-attr').split(':');
+          el.setAttribute(parts[0], t(parts[1]));
+        });
+        document.title = t('meta.title');
+        var md = document.querySelector('meta[name="description"]');
+        if (md) md.setAttribute('content', t('meta.desc'));
+        document.querySelectorAll('.lang-toggle button').forEach(function (b) {
+          b.setAttribute('aria-pressed', String(b.dataset.lang === current));
+        });
+        menuBtn.setAttribute('aria-label', t(menuOpen ? 'nav.close' : 'nav.open'));
+        try { localStorage.setItem('totolab-lang', current); } catch (e) {}
+      }
+
+      // Menú móvil
+      var menuBtn = document.querySelector('.menu-btn');
+      var mobileNav = document.getElementById('mobile-nav');
+      var menuOpen = false;
+      function toggleMenu(open) {
+        menuOpen = open;
+        mobileNav.classList.toggle('open', open);
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.setAttribute('aria-label', t(open ? 'nav.close' : 'nav.open'));
+        menuBtn.querySelector('use').setAttribute('href', open ? '#i-x' : '#i-menu');
+      }
+      menuBtn.addEventListener('click', function () { toggleMenu(!menuOpen); });
+      mobileNav.addEventListener('click', function (e) { if (e.target.closest('a')) toggleMenu(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && menuOpen) { toggleMenu(false); menuBtn.focus(); } });
+
+      document.querySelectorAll('.lang-toggle button').forEach(function (b) {
+        b.addEventListener('click', function () { setLang(b.dataset.lang); });
+      });
+
+      var saved = null;
+      try { saved = localStorage.getItem('totolab-lang'); } catch (e) {}
+      var initial = saved || ((navigator.language || 'es').toLowerCase().indexOf('es') === 0 ? 'es' : 'en');
+      var urlLang = new URLSearchParams(location.search).get('lang');
+      if (urlLang === 'es' || urlLang === 'en') initial = urlLang;
+      setLang(initial);
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Formulario: valida y abre correo o WhatsApp con el mensaje armado
+      var form = document.getElementById('contact-form');
+      var status = document.getElementById('form-status');
+      var channel = 'email';
+      form.querySelectorAll('button[type="submit"]').forEach(function (b) {
+        b.addEventListener('click', function () { channel = b.dataset.channel; });
+      });
+      function check(input, ok) {
+        var err = document.getElementById(input.getAttribute('aria-describedby'));
+        input.setAttribute('aria-invalid', String(!ok));
+        if (err) err.classList.toggle('show', !ok);
+        return ok;
+      }
+      ['f-name', 'f-email', 'f-msg'].forEach(function (id) {
+        var el = document.getElementById(id);
+        el.addEventListener('blur', function () { if (el.value) validate(el); });
+        el.addEventListener('input', function () { if (el.getAttribute('aria-invalid') === 'true') validate(el); });
+      });
+      function validate(el) {
+        if (el.id === 'f-name') return check(el, el.value.trim().length >= 2);
+        if (el.id === 'f-email') return check(el, /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(el.value.trim()));
+        return check(el, el.value.trim().length >= 10);
+      }
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        status.classList.remove('show');
+        var fields = ['f-name', 'f-email', 'f-msg'].map(function (id) { return document.getElementById(id); });
+        var firstBad = null;
+        fields.forEach(function (el) { if (!validate(el) && !firstBad) firstBad = el; });
+        if (firstBad) { firstBad.focus(); return; }
+
+        var typeSel = document.getElementById('f-type');
+        var data = {
+          name: fields[0].value.trim(),
+          email: fields[1].value.trim(),
+          company: document.getElementById('f-company').value.trim(),
+          type: typeSel.options[typeSel.selectedIndex].text,
+          msg: fields[2].value.trim()
+        };
+        var lines = [
+          t('mail.name') + ': ' + data.name,
+          t('mail.email') + ': ' + data.email
+        ];
+        if (data.company) lines.push(t('mail.company') + ': ' + data.company);
+        lines.push(t('mail.type') + ': ' + data.type, '', t('mail.msg') + ':', data.msg);
+        var body = lines.join('\n');
+
+        if (channel === 'whatsapp') {
+          window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(body), '_blank', 'noopener');
+          status.textContent = t('form.okWa');
+        } else {
+          var subject = t('mail.subject') + ' · ' + data.type + ' · ' + data.name;
+          location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+          status.textContent = t('form.okEmail');
+        }
+        status.classList.add('show');
+      });
+
+      // Animación de entrada
+      var reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+          });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+        reveals.forEach(function (el, i) { el.style.transitionDelay = (i % 3) * 60 + 'ms'; io.observe(el); });
+      } else {
+        reveals.forEach(function (el) { el.classList.add('in'); });
+      }
+    })();
+  </script>
+</body>
+</html>
