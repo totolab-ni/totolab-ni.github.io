@@ -314,6 +314,80 @@
     .project-link:hover { text-decoration: underline; }
     .project-link .ico { width: 16px; height: 16px; }
 
+    /* Código abierto */
+    .oss { display: grid; gap: 16px; }
+    @media (min-width: 900px) { .oss { grid-template-columns: repeat(2, 1fr); gap: 20px; } .oss .project { grid-column: auto; } }
+    .oss .project { padding: 0; }
+    .oss-media {
+      display: block; position: relative; margin: 12px 12px 0; border-radius: 10px; overflow: hidden;
+      background: var(--navy); border: 1px solid var(--border); aspect-ratio: 16 / 10;
+    }
+    .oss-media::before {
+      content: ""; position: absolute; inset: 0 0 auto; height: 26px; z-index: 1;
+      background: radial-gradient(circle at 14px 13px, #FF5F57 4px, transparent 4.5px),
+                  radial-gradient(circle at 30px 13px, #FEBC2E 4px, transparent 4.5px),
+                  radial-gradient(circle at 46px 13px, #28C840 4px, transparent 4.5px),
+                  rgba(7, 22, 36, 0.92);
+      border-bottom: 1px solid rgba(243, 235, 221, 0.08);
+    }
+    .oss-media img {
+      position: absolute; inset: 26px 0 0; width: 100%; height: calc(100% - 26px);
+      object-fit: cover; object-position: top left; transition: transform 500ms var(--ease);
+    }
+    .oss-media::after {
+      content: ""; position: absolute; inset: 26px 0 0; pointer-events: none;
+      background: linear-gradient(180deg, transparent 55%, color-mix(in srgb, var(--surface) 85%, transparent) 100%);
+    }
+    a.oss-media:hover img { transform: scale(1.03); }
+    a.oss-media:focus-visible { outline-offset: 2px; }
+    .oss-body { display: flex; flex-direction: column; flex: 1; padding: 22px 28px 28px; }
+    .oss-body .project-top { margin-bottom: 14px; align-items: center; }
+    .oss-body .project-ico { width: 44px; height: 44px; border-radius: 12px; }
+    .oss-body .project-ico .ico { width: 22px; height: 22px; }
+    .oss-title { display: flex; align-items: center; gap: 12px; }
+    .oss-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 14px; padding: 0; list-style: none; font-size: 0.85rem; color: var(--muted-fg); }
+    .oss-meta li { display: inline-flex; align-items: center; gap: 6px; }
+    .oss-meta .ico { width: 15px; height: 15px; color: var(--success); }
+    .oss-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .oss-actions .btn { flex: 1 1 170px; min-height: 46px; padding: 0 18px; font-size: 0.95rem; }
+    .btn-dark { background: var(--navy); color: var(--cream); }
+    .btn-dark:hover { background: var(--navy-3); }
+    @media (prefers-color-scheme: dark) {
+      .btn-dark { background: var(--cream); color: var(--navy); }
+      .btn-dark:hover { background: #FFFFFF; }
+    }
+
+    /* Apoyo */
+    .support {
+      margin-top: 20px; padding: 28px; display: grid; gap: 24px; align-items: center; position: relative; overflow: hidden;
+    }
+    .support::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(var(--macaw-red), var(--macaw-yellow), var(--macaw-blue)); }
+    @media (min-width: 960px) { .support { grid-template-columns: 0.9fr 1.1fr; padding: 36px 40px; gap: 40px; } }
+    .support h3 { font-size: 1.35rem; font-weight: 800; display: flex; align-items: center; gap: 10px; }
+    .support h3 .ico { color: var(--macaw-red); width: 22px; height: 22px; }
+    .support-lead { margin-top: 10px; color: var(--muted-fg); font-size: 0.975rem; }
+    .support-page { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; min-height: 44px; font-weight: 700; font-size: 0.925rem; text-decoration: none; }
+    .support-page:hover { text-decoration: underline; }
+    .support-page .ico { width: 16px; height: 16px; }
+    .support-options { display: grid; gap: 12px; }
+    @media (min-width: 560px) { .support-options { grid-template-columns: 1fr 1fr; } }
+    .support-option {
+      display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px;
+      padding: 18px; border-radius: 14px; text-decoration: none; color: #0B1B2B; min-height: 76px;
+      background: var(--opt-bg); border: 1px solid color-mix(in srgb, #0B1B2B 10%, transparent);
+      transition: transform 180ms var(--ease), box-shadow 180ms var(--ease), filter 180ms var(--ease);
+    }
+    .support-option:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -12px color-mix(in srgb, var(--opt-bg) 80%, black); filter: saturate(1.08); }
+    .support-option:active { transform: scale(0.98); }
+    .support-option .opt-ico { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; background: rgba(11, 27, 43, 0.1); }
+    .support-option .opt-ico .ico { width: 20px; height: 20px; }
+    .support-option strong { display: block; font-size: 1rem; font-weight: 800; line-height: 1.25; }
+    .support-option small { display: block; margin-top: 2px; font-size: 0.82rem; font-weight: 600; color: rgba(11, 27, 43, 0.78); }
+    .support-option > .ico { width: 18px; height: 18px; transition: transform 180ms var(--ease); }
+    .support-option:hover > .ico { transform: translateX(3px); }
+    .opt-bmc { --opt-bg: #FFDD00; }
+    .opt-patreon { --opt-bg: #F96854; }
+
     /* Nosotros: misión / visión / metas */
     .about-intro { display: grid; gap: 40px; align-items: start; }
     @media (min-width: 960px) { .about-intro { grid-template-columns: 0.9fr 1.1fr; gap: 64px; } }
@@ -475,6 +549,11 @@
       <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
       <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
       <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V2a5 5 0 0 0 5 5"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+      <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol>
+      <symbol id="i-cube" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></symbol>
       <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
     </defs>
   </svg>
@@ -491,6 +570,7 @@
         <ul>
           <li><a href="#servicios" data-i18n="nav.services">Servicios</a></li>
           <li><a href="#proyectos" data-i18n="nav.projects">Proyectos</a></li>
+          <li><a href="#codigo-abierto" data-i18n="nav.oss">Código abierto</a></li>
           <li><a href="#nosotros" data-i18n="nav.about">Nosotros</a></li>
           <li><a href="#proceso" data-i18n="nav.process">Cómo trabajamos</a></li>
         </ul>
@@ -509,6 +589,7 @@
     <nav class="mobile-nav wrap" id="mobile-nav" aria-label="Móvil" data-i18n-attr="aria-label:nav.mobile">
       <a href="#servicios" data-i18n="nav.services">Servicios</a>
       <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
+      <a href="#codigo-abierto" data-i18n="nav.oss">Código abierto</a>
       <a href="#nosotros" data-i18n="nav.about">Nosotros</a>
       <a href="#proceso" data-i18n="nav.process">Cómo trabajamos</a>
       <a href="#contacto" data-i18n="nav.contact">Contáctenos</a>
@@ -674,6 +755,94 @@
             <p class="desc" data-i18n="p5.d">Gestión de mesas y pedidos, inventario de insumos, gastos, menú virtual con código QR y reportes de ventas y márgenes en tiempo real.</p>
             <ul class="tags"><li>NestJS</li><li>React</li><li>Prisma</li><li>Socket.IO</li></ul>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CÓDIGO ABIERTO ================= -->
+    <section class="section" id="codigo-abierto" aria-labelledby="oss-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="oss.eyebrow">Código abierto</p>
+          <h2 id="oss-title" data-i18n="oss.title">Herramientas libres, hechas en casa</h2>
+          <p data-i18n="oss.lead">Aplicaciones de escritorio gratuitas, de código abierto (MIT) y sin telemetría que usamos a diario y compartimos con la comunidad.</p>
+          <div class="tricolor" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+
+        <div class="oss">
+          <article class="card project reveal" style="--accent:#6750A4">
+            <a class="oss-media" href="https://rafael180496.github.io/mini-tools/" target="_blank" rel="noopener" aria-label="mini-tools: ver sitio y documentación" data-i18n-attr="aria-label:oss1.media">
+              <img src="assets/oss/mini-tools.webp" alt="" width="1100" height="688" loading="lazy" decoding="async">
+            </a>
+            <div class="oss-body">
+              <div class="project-top">
+                <div class="oss-title">
+                  <div class="project-ico"><svg class="ico" aria-hidden="true"><use href="#i-database"/></svg></div>
+                  <h3>mini-tools</h3>
+                </div>
+                <span class="badge live"><span class="pulse"></span><span data-i18n="badge.stable">Versión estable</span></span>
+              </div>
+              <p class="kind" data-i18n="oss1.k">Cliente de bases de datos, HTTP, SSH, Git e IA · macOS y Windows</p>
+              <p class="desc" data-i18n="oss1.d">Un solo binario de menos de 80 MB: Oracle, PostgreSQL, SQL Server, SQLite, Redis y MongoDB, cliente HTTP, terminal SSH/SFTP, Git y agentes de IA (Claude Code, Codex, Ollama). Sin cuenta y con las credenciales cifradas en su equipo.</p>
+              <ul class="oss-meta">
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="oss.mit">Licencia MIT</span></li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="oss.free">Gratis</span></li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="oss.notel">Sin telemetría</span></li>
+              </ul>
+              <ul class="tags"><li>Go</li><li>Wails</li><li>React</li><li>SQLite</li></ul>
+              <div class="oss-actions">
+                <a class="btn btn-dark" href="https://github.com/rafael180496/mini-tools" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg><span data-i18n="link.code">Ver código</span></a>
+                <a class="btn btn-outline" href="https://rafael180496.github.io/mini-tools/" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-book"/></svg><span data-i18n="link.docs">Sitio y documentación</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project reveal" style="--accent:#E8730C">
+            <a class="oss-media" href="https://rafael180496.github.io/scad-lab/" target="_blank" rel="noopener" aria-label="ScadLab: ver sitio y documentación" data-i18n-attr="aria-label:oss2.media">
+              <img src="assets/oss/scadlab.webp" alt="" width="1100" height="688" loading="lazy" decoding="async">
+            </a>
+            <div class="oss-body">
+              <div class="project-top">
+                <div class="oss-title">
+                  <div class="project-ico"><svg class="ico" aria-hidden="true"><use href="#i-cube"/></svg></div>
+                  <h3>ScadLab</h3>
+                </div>
+                <span class="badge dev"><span class="pulse"></span><span data-i18n="badge.dev">En desarrollo</span></span>
+              </div>
+              <p class="kind" data-i18n="oss2.k">Diseño 3D con OpenSCAD e IA · macOS y Windows</p>
+              <p class="desc" data-i18n="oss2.d">Describa una pieza y un agente de IA la escribe en OpenSCAD; luego la ve, la mide, compara versiones y la exporta a STL o 3MF multicolor, lista para imprimir en Bambu Lab.</p>
+              <ul class="oss-meta">
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="oss.mit">Licencia MIT</span></li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="oss.free">Gratis</span></li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="oss.notel">Sin telemetría</span></li>
+              </ul>
+              <ul class="tags"><li>Go</li><li>Wails</li><li>OpenSCAD</li><li>Three.js</li></ul>
+              <div class="oss-actions">
+                <a class="btn btn-dark" href="https://github.com/rafael180496/scad-lab" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg><span data-i18n="link.code">Ver código</span></a>
+                <a class="btn btn-outline" href="https://rafael180496.github.io/scad-lab/" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-book"/></svg><span data-i18n="link.docs">Sitio y documentación</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="card support reveal" id="apoyar">
+          <div>
+            <h3><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg><span data-i18n="support.title">Apoye el código abierto</span></h3>
+            <p class="support-lead" data-i18n="support.lead">Estos proyectos son gratis y lo seguirán siendo. Si le ahorran tiempo, su aporte nos ayuda a dedicarles más horas.</p>
+            <a class="support-page" href="https://www.patreon.com/cw/TotoLab2026" target="_blank" rel="noopener"><span data-i18n="support.page">Ver nuestra página en Patreon</span><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a>
+          </div>
+          <div class="support-options">
+            <a class="support-option opt-bmc" href="https://buymeacoffee.com/rhidalgo" target="_blank" rel="noopener">
+              <span class="opt-ico"><svg class="ico" aria-hidden="true"><use href="#i-coffee"/></svg></span>
+              <span><strong>Buy Me a Coffee</strong><small data-i18n="support.once">Aporte único</small></span>
+              <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="support-option opt-patreon" href="https://www.patreon.com/16966547/join" target="_blank" rel="noopener">
+              <span class="opt-ico"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></span>
+              <span><strong data-i18n="support.patreon">Suscribirse en Patreon</strong><small data-i18n="support.monthly">Apoyo mensual</small></span>
+              <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -853,6 +1022,7 @@
           <ul>
             <li><a href="#servicios" data-i18n="nav.services">Servicios</a></li>
             <li><a href="#proyectos" data-i18n="nav.projects">Proyectos</a></li>
+            <li><a href="#codigo-abierto" data-i18n="nav.oss">Código abierto</a></li>
             <li><a href="#nosotros" data-i18n="nav.about">Nosotros</a></li>
             <li><a href="#contacto" data-i18n="nav.contact">Contáctenos</a></li>
           </ul>
@@ -869,6 +1039,13 @@
           <h3 style="margin-top:20px" data-i18n="footer.apps">Nuestras apps</h3>
           <ul>
             <li><a href="https://play.google.com/store/apps/details?id=com.totolab.myapplottery" target="_blank" rel="noopener" data-i18n="footer.adminplus">AdminPlus en Google Play</a></li>
+            <li><a href="https://github.com/rafael180496/mini-tools" target="_blank" rel="noopener">mini-tools</a></li>
+            <li><a href="https://github.com/rafael180496/scad-lab" target="_blank" rel="noopener">ScadLab</a></li>
+          </ul>
+          <h3 style="margin-top:20px" data-i18n="footer.support">Apoyar</h3>
+          <ul>
+            <li><a href="https://buymeacoffee.com/rhidalgo" target="_blank" rel="noopener">Buy Me a Coffee</a></li>
+            <li><a href="https://www.patreon.com/16966547/join" target="_blank" rel="noopener" data-i18n="footer.patreon">Patreon</a></li>
           </ul>
         </div>
       </div>
@@ -901,6 +1078,7 @@
           'nav.close': 'Close menu',
           'nav.services': 'Services',
           'nav.projects': 'Projects',
+          'nav.oss': 'Open source',
           'nav.about': 'About us',
           'nav.process': 'How we work',
           'nav.contact': 'Contact us',
@@ -1030,7 +1208,30 @@
           'footer.contact': 'Contact',
           'footer.rights': 'All rights reserved.',
           'footer.apps': 'Our apps',
-          'footer.adminplus': 'AdminPlus on Google Play'
+          'footer.adminplus': 'AdminPlus on Google Play',
+          'footer.support': 'Support us',
+          'footer.patreon': 'Patreon',
+          'oss.eyebrow': 'Open source',
+          'oss.title': 'Free tools, built in-house',
+          'oss.lead': 'Free, open-source (MIT) desktop apps with no telemetry that we use every day and share with the community.',
+          'oss1.k': 'Database, HTTP, SSH, Git and AI client · macOS and Windows',
+          'oss1.d': 'A single binary under 80 MB: Oracle, PostgreSQL, SQL Server, SQLite, Redis and MongoDB, an HTTP client, SSH/SFTP terminal, Git and AI agents (Claude Code, Codex, Ollama). No account, and credentials stay encrypted on your machine.',
+          'oss2.k': '3D design with OpenSCAD and AI · macOS and Windows',
+          'oss2.d': 'Describe a part and an AI agent writes it in OpenSCAD; then view it, measure it, compare versions and export it to STL or multicolor 3MF, ready to print on Bambu Lab.',
+          'link.docs': 'Website and docs',
+          'support.title': 'Support open source',
+          'support.lead': 'These projects are free and will stay that way. If they save you time, your support helps us put more hours into them.',
+          'support.once': 'One-time support',
+          'support.monthly': 'Monthly support',
+          'badge.stable': 'Stable release',
+          'oss.mit': 'MIT license',
+          'oss.free': 'Free',
+          'oss.notel': 'No telemetry',
+          'oss1.media': 'mini-tools: see website and docs',
+          'oss2.media': 'ScadLab: see website and docs',
+          'link.code': 'View code',
+          'support.patreon': 'Subscribe on Patreon',
+          'support.page': 'See our Patreon page'
         }
       };
       // Textos en español que no están en el HTML (solo los usa JS)
