@@ -314,7 +314,34 @@
     .project-link:hover { text-decoration: underline; }
     .project-link .ico { width: 16px; height: 16px; }
 
-    /* Código abierto */
+    /* Código abierto: banda oscura en ambos temas (los tokens se reasignan dentro) */
+    .oss-section {
+      --surface: #0C2135; --surface-2: #13304B; --fg: #EEF2F6; --muted-fg: #A3B3C4;
+      --border: rgba(243, 235, 221, 0.10); --border-strong: rgba(243, 235, 221, 0.22);
+      --link: #8DB6F5; --success: #4ADE80;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 18px 40px -20px rgba(0, 0, 0, 0.6);
+      position: relative; overflow: hidden; color: var(--fg);
+      background:
+        radial-gradient(60% 50% at 85% 0%, rgba(30, 91, 184, 0.28), transparent 70%),
+        radial-gradient(45% 40% at 0% 100%, rgba(215, 38, 46, 0.16), transparent 70%),
+        var(--navy);
+    }
+    .oss-section::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.5;
+      background-image: radial-gradient(rgba(111, 208, 230, 0.16) 1px, transparent 1px);
+      background-size: 22px 22px;
+      mask-image: linear-gradient(180deg, #000, transparent 45%);
+      -webkit-mask-image: linear-gradient(180deg, #000, transparent 45%);
+    }
+    .oss-section .wrap { position: relative; }
+    .oss-section .eyebrow { color: var(--circuit); }
+    .oss-section .section-head p { color: rgba(243, 235, 221, 0.72); }
+    .oss-section .badge.dev { color: var(--macaw-yellow); border-color: rgba(245, 184, 46, 0.35); }
+    .oss-section .btn-dark { background: var(--cream); color: var(--navy); }
+    .oss-section .btn-dark:hover { background: #FFFFFF; }
+    .oss-section .btn-outline:hover { background: rgba(243, 235, 221, 0.08); }
+    .oss-section .project { transition: border-color 220ms var(--ease), transform 220ms var(--ease); }
+    .oss-section .project:hover { border-color: color-mix(in srgb, var(--accent) 55%, transparent); }
     .oss { display: grid; gap: 16px; }
     @media (min-width: 900px) { .oss { grid-template-columns: repeat(2, 1fr); gap: 20px; } .oss .project { grid-column: auto; } }
     .oss .project { padding: 0; }
@@ -760,7 +787,7 @@
     </section>
 
     <!-- ================= CÓDIGO ABIERTO ================= -->
-    <section class="section" id="codigo-abierto" aria-labelledby="oss-title">
+    <section class="section oss-section" id="codigo-abierto" aria-labelledby="oss-title">
       <div class="wrap">
         <div class="section-head reveal">
           <p class="eyebrow" data-i18n="oss.eyebrow">Código abierto</p>
@@ -772,7 +799,7 @@
         <div class="oss">
           <article class="card project reveal" style="--accent:#6750A4">
             <a class="oss-media" href="https://rafael180496.github.io/mini-tools/" target="_blank" rel="noopener" aria-label="mini-tools: ver sitio y documentación" data-i18n-attr="aria-label:oss1.media">
-              <img src="assets/oss/mini-tools.webp" alt="" width="1100" height="688" loading="lazy" decoding="async">
+              <img src="assets/oss/mini-tools-es.webp" data-i18n-attr="src:img.oss1" alt="" width="1100" height="688" loading="lazy" decoding="async">
             </a>
             <div class="oss-body">
               <div class="project-top">
@@ -799,7 +826,7 @@
 
           <article class="card project reveal" style="--accent:#E8730C">
             <a class="oss-media" href="https://rafael180496.github.io/scad-lab/" target="_blank" rel="noopener" aria-label="ScadLab: ver sitio y documentación" data-i18n-attr="aria-label:oss2.media">
-              <img src="assets/oss/scadlab.webp" alt="" width="1100" height="688" loading="lazy" decoding="async">
+              <img src="assets/oss/scadlab-es.webp" data-i18n-attr="src:img.oss2" alt="" width="1100" height="688" loading="lazy" decoding="async">
             </a>
             <div class="oss-body">
               <div class="project-top">
@@ -839,7 +866,7 @@
             </a>
             <a class="support-option opt-patreon" href="https://www.patreon.com/16966547/join" target="_blank" rel="noopener">
               <span class="opt-ico"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></span>
-              <span><strong data-i18n="support.patreon">Suscribirse en Patreon</strong><small data-i18n="support.monthly">Apoyo mensual</small></span>
+              <span><strong>Patreon</strong><small data-i18n="support.monthly">Suscripción mensual</small></span>
               <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
             </a>
           </div>
@@ -1222,7 +1249,7 @@
           'support.title': 'Support open source',
           'support.lead': 'These projects are free and will stay that way. If they save you time, your support helps us put more hours into them.',
           'support.once': 'One-time support',
-          'support.monthly': 'Monthly support',
+          'support.monthly': 'Monthly subscription',
           'badge.stable': 'Stable release',
           'oss.mit': 'MIT license',
           'oss.free': 'Free',
@@ -1230,7 +1257,8 @@
           'oss1.media': 'mini-tools: see website and docs',
           'oss2.media': 'ScadLab: see website and docs',
           'link.code': 'View code',
-          'support.patreon': 'Subscribe on Patreon',
+          'img.oss1': 'assets/oss/mini-tools-en.webp',
+          'img.oss2': 'assets/oss/scadlab-en.webp',
           'support.page': 'See our Patreon page'
         }
       };
